@@ -130,15 +130,18 @@ export default class PokemonStats extends Component {
         let description = ''
         data.flavor_text_entries.some(flavor => {
           if (flavor.language.name === 'en') {
-            description = flavor.flavor_text
+            description = flavor.flavor_text.split("").map(text => {
+              return text.replace("", " ")
+            })
             return
           }
         })
+        // console.log(description)
 
         let femaleRate
         let genderRatioFemale
         let genderRatioMale
-        // const femaleRate = data.gender_rate
+
         if (data.gender_rate > 0) {
          femaleRate = data.gender_rate
          genderRatioFemale = 12.5 * femaleRate
@@ -223,8 +226,12 @@ export default class PokemonStats extends Component {
           <div className="card-body">
             <div className="row align-items-center">
               <div className="col-md-3">
-                <img src={this.state.imageUrl}
-                  className="card-img-top rounded mx-auto mt-2"/>
+                {this.state.pokemonIndex < 650 ? (
+                  <img className="card-img-top rounded mx-auto mt-2" src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${this.state.name}.gif`} alt={this.state.name}/>
+                ) : (
+                  <img src={this.state.imageUrl}
+                    className="card-img-top rounded mx-auto mt-2"/> 
+                )}
               </div>
               <div className="col-md-9">
                 <h4 className="mx-auto">
