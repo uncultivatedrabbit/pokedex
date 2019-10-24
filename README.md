@@ -1,3 +1,8 @@
+Multigen Pokedex Application built to practice React, React Router, API calls, fetch, etc.
+
+This app is built upon the code used by Chris Stayte in his Fun with API's tutorial. To practice / expand upon the original I have changed the method of API calls, added logic to fix the bug that happens with genderless pokemon, used React Routers to allow users to select which gen of pokemon they want to learn about, built exta components for that functionality, added forward / back buttons to toggle between pokemon, and added some of my own styling. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

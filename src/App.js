@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import './App.css'
+import NavBar from './components/layout/NavBar'
+import Dashboard from './components/layout/Dashboard'
+import PokemonStats from './components/pokemon/PokemonStats'
+import PokemonV1 from './components/pokemon/PokemonV1'
+import PokemonV2 from './components/pokemon/PokemonV2'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar/>
+        <div className="container">
+        <Switch>
+          <Route exact path="/" component={Dashboard}/>
+          <Route exact path="/pokemon/pokemongen/pokemon/:pokemonIndex" component={PokemonStats}/>
+          <Route exact path="/pokemon/pokemongen/1/" component={PokemonV1}/>
+          <Route exact path="/pokemon/pokemongen/2/" component={PokemonV2}/>
+          <Route/>
+        </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
