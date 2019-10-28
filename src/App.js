@@ -13,12 +13,13 @@ import PokemonV6 from './components/pokemon/PV6'
 import PokemonV7 from './components/pokemon/PV7'
 import Error from './components/layout/Error'
 
+
 function App() {
   return (
     <Router>
       <div className="App">
         <NavBar/>
-        <div className="container">
+        <div className="container-fluid">
         <Switch>
           <Route exact path="/" component={Dashboard}/>
           <Route exact path="/pokemon/pokemongen/pokemon/:pokemonIndex" component={PokemonStats}/>

@@ -20,7 +20,8 @@ export default class PokemonV1 extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.pokemon ? 
+        {this.state.pokemon ?
+        <div className="container">
           <div className="row">
             {this.state.pokemon.map(pokemon => (
               <PokemonCard
@@ -29,7 +30,9 @@ export default class PokemonV1 extends Component {
                 key={pokemon.name}
               />
               ))}
-          </div> : <h1>Loading pokemon...</h1>}
+          </div>
+        </div>
+           : <h1>Loading pokemon...</h1>}
       </React.Fragment>
     )
   }
