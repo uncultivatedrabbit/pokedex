@@ -232,18 +232,16 @@ export default class PokemonStats extends Component {
 
 
   render() {
-    console.log(this.state.imageUrl)
     return (
       <React.Fragment>
       <Selector
-      currentPokemonSprite={this.state.imageURL}
       currentPokemonId={this.props.match.params.pokemonIndex}
       prevPokemonId={
         Number(this.props.match.params.pokemonIndex -1) > 0 ?
         (Number(this.props.match.params.pokemonIndex) - 1).toString() 
         : ""}
       nextPokemonId={
-        Number(this.props.match.params.pokemonIndex) <= 801 ?
+        Number(this.props.match.params.pokemonIndex) <= 802 ?
         (Number(this.props.match.params.pokemonIndex) + 1).toString()
         : ""}
         prevPokemonName={this.state.prevPokemonName}
